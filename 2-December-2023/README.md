@@ -10,7 +10,7 @@ Event Agenda and Discussions
 
 
 ### Sponsors
-![sponsors](2-December-2034-Meetup-sponsors.png)
+![sponsors](2-December-2023-Meetup-sponsors.png)
 
 ##### LICENSE 
 All brand collateral is licensed under  [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)

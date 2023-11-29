@@ -1,12 +1,15 @@
 <img src="https://raw.githubusercontent.com/RustaceansKenya/Brand-Collateral/master/Logos/RustaceansKenya-Logo.svg" width="40%" height = "auto" />
 
-#### Meetup Details
+### Meetup Details
 Saturday 2nd December 10:00 - 16:30 EAT
 Africa's Talking,
 Lavington, Nairobi Kenya.
 
+Event Agenda and Discussions
+[https://github.com/RustaceansKenya/Events/discussions/2](https://github.com/RustaceansKenya/Events/discussions/2)
 
-#### Sponsors
+
+### Sponsors
 ![sponsors](2-December-2034-Meetup-sponsors.png)
 
 ##### LICENSE 

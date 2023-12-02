@@ -34,3 +34,25 @@
     }
     ```
     
+19. Use `jemallocator` as the allocator
+    The system allocator used to allocate memory can be slow to allocate memory. Switching the alloactor to a custom allocator can increase the speed of the running Rust program. A common custom allocator used in Rust is `jemallocator`. Add this to your `main.rs` file
+    ```toml
+    [dependencies]
+    jemallocator = "*"
+    ```
+
+    ```rust
+    #[cfg(not(target_env = "msvc"))]
+      use jemallocator::Jemalloc;
+
+      #[cfg(not(target_env = "msvc"))]
+      #[global_allocator]
+      static GLOBAL: Jemalloc = Jemalloc;
+    ```
+
+    NOTE: Not all Rust programs are bottlenecked on allocations, and those which are can use #[global_allocator] to opt-in to a jemalloc-based global allocator (through the jemallocator or any other allocator crate).
+
+    More info on `jemallocator` 
+      - Github - https://github.com/gnzlbg/jemallocator
+      - Article - https://web.archive.org/web/20220327090938/https://christianfscott.com/making-rust-as-fast-as-go/
+      - Article on when `jemallocator` was removed - https://github.com/rust-lang/rust/issues/36963

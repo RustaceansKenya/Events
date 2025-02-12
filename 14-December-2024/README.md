@@ -11,6 +11,8 @@ Live URL: `https://rustwasm.c12i.xyz`
 
 PDF: [rustwasm.pdf](./rustwasm.pdf)
 
+_Powered by [sli.dev](https://sli.dev)_
+
 ## LICENSE
 
 All work in this repository is released to the public domain under CC0-1.0

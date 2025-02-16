@@ -9,7 +9,7 @@ use identity::{
         login::login,
         register::register,
         status::status,
-        users::{user_by_username, users},
+        users::{delete_user_by_username, user_by_username, users},
     },
 };
 
@@ -33,6 +33,7 @@ async fn main() -> std::io::Result<()> {
             .service(login)
             .service(users)
             .service(user_by_username)
+            .service(delete_user_by_username)
             .service(status)
     };
 

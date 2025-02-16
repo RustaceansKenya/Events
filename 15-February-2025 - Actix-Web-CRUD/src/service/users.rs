@@ -1,5 +1,5 @@
 use actix_web::{
-    get,
+    delete, get,
     web::{Data, Path},
     HttpResponse,
 };
@@ -42,6 +42,33 @@ pub async fn user_by_username(
     Ok(HttpResponse::Ok().json({
         json!({
             "data": user,
+            "success": true
+        })
+    }))
+}
+
+#[delete("/users/{username}")]
+pub async fn delete_user_by_username(
+    data: Data<AppState>,
+    username: Path<String>,
+) -> Result<HttpResponse, Error> {
+    let mut users_ = data
+        .users
+        .lock()
+        .map_err(|_| Error::InternalError("Lock Error".to_string()))?;
+
+    log::info!("Deleting user by username: {}", username);
+
+    let user = users_
+        .iter()
+        .position(|u| u.username == username.to_string())
+        .ok_or(Error::NotFound)?;
+
+    users_.remove(user);
+
+    Ok(HttpResponse::Ok().json({
+        json!({
+            "msg": "User deleted successfully",
             "success": true
         })
     }))

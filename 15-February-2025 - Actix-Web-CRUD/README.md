@@ -7,11 +7,11 @@ Minimal Identity CRUD REST application featuring actix-web framework
 - [x] Telemetry
 - [x] Create a user
 - [x] Read users
+- [x] Read a user
 - [x] Database: In-memory
 
-- [] Read a user
 - [] Update a user
-- [] Delete a user
+- [x] Delete a user
 
 ## Usage
 
@@ -23,9 +23,8 @@ $ cargo run
 
 - `GET /users` - List all users
 - `POST /users` - Create a user
-
-- `PUT /users/{id}` - Update a user by id
-- `DELETE /users/{id}` - Delete a user by id
+- `PUT /users/{username}` - Update a user by username
+- `DELETE /users/{username}` - Delete a user by username
 
 - `GET /status` - Health check
 

@@ -5,6 +5,8 @@ Minimal Identity CRUD REST application featuring actix-web framework
 ## Features
 
 - [x] Telemetry
+- [x] Health check
+- [x] Input validation
 - [x] Create a user
 - [x] Read users
 - [x] Read a user
@@ -40,4 +42,24 @@ $ curl -X POST -H "Content-Type: application/json" -d '{"username": "john", "pas
 
 ```bash
 $ curl -X GET http://localhost:5000/users
+```
+
+#### Read a user
+
+```bash
+$ curl -X GET http://localhost:5000/users/john
+```
+
+#### Delete a user
+
+```bash
+$ curl -X DELETE http://localhost:5000/users/john
+```
+
+## License
+
+MIT
+
+```
+
 ```

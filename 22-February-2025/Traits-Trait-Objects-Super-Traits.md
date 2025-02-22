@@ -491,6 +491,37 @@ By implementing a trait, a type ***shares these behaviors with other types*** th
      }
      ```
 
+     - Sealed Traits
+       Traits are public, as discussed earlier. You can make trait private by not exposing them to outside libraries by not using the `pub` keyword ,i.e. `pub trait Foo{}` . `pub` keyword makes types in Rust accessible by external libraries. 
+       Another method is to let a trait be public but prevent one of it's methods from being compiled successfully by adding a method argument or associated type that is not public.
      
-
+       These traits are called `Sealed` traits
+     
+       ```rust
+       
+       enum Community {
+           Rust,
+           Flutter,
+       }
+       
+       pub trait Communities {
+           // This type is not accessible outside of this
+           // scope since `enum Community {}` it is not declared as public (`pub`).
+           // Therefore external libraries cannot call this method
+           fn check(&self) -> Community;
+       
+           // Here, a `String` is accessible outside this scope
+           // sp external libraries can call this successfully
+           fn bar(&self) -> String;
+       }
+       
+       // This trait is not public so it cannot be called by
+       // outside libraries
+       trait Planet {}
+       
+       ```
+     
+       
+     
+       Learn more at [https://web.archive.org/web/20250206123353/https://predr.ag/blog/definitive-guide-to-sealed-traits-in-rust/](https://web.archive.org/web/20250206123353/https://predr.ag/blog/definitive-guide-to-sealed-traits-in-rust/)
 
